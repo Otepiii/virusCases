@@ -24,8 +24,21 @@ export class CasesDetailsComponent implements OnInit {
       this.isLoadingResults = false;
     });
   }
+  deleteCases(id: any){
+    this.isLoadingResults= true;
+    this.api.deleteCases(id)
+      .subscribe(res => {
+        this.isLoadingResults= false;
+        this.router.navigate(['/cases']);
+      }, (err)=> {
+        console.log(err);
+        this.isLoadingResults = false;
+      }
+    );
+  }
 
   ngOnInit(): void {
+    this.getCasesDetails(this.route.snapshot.params.id);
   }
 
 }
