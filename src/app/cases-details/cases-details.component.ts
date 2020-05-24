@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router} from '@angular/router';
+import { ApiService} from '../api.service';
+import {Cases} from '../cases';
+
+import { from } from 'rxjs';
 
 @Component({
   selector: 'app-cases-details',
