@@ -47,10 +47,15 @@ export class CasesStatComponent implements OnInit {
       this.isLoadingResults = false;
     });
   }
+  changeStatus() {
+    this.isLoadingResults = true;
+    this.getStatistic(this.label);
+  };
 
   constructor(private api: ApiService) { }
 
   ngOnInit(): void {
+    this.getStatistic(this.label);
   }
 
 }
