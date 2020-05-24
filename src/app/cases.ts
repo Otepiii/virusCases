@@ -5,6 +5,7 @@ export class Cases {
   age: number;
   address: string;
   city: string;
+  country: string;
   status: string;
   updated: Date;
 }

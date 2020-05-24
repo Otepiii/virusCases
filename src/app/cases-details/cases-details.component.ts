@@ -4,7 +4,7 @@ import { ApiService} from '../api.service';
 import {Cases} from '../cases';
 
 import { from } from 'rxjs';
-import { runInThisContext } from 'vm';
+// import { runInThisContext } from 'vm';
 
 @Component({
   selector: 'app-cases-details',
@@ -14,7 +14,7 @@ import { runInThisContext } from 'vm';
 export class CasesDetailsComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private api: ApiService, private router: Router) { }
-  cases: Cases = {_id: '', name: '', gender: '', age: null, address: '', city: '', status: '', updated: null};
+  cases: Cases = {_id: '', name: '', gender: '', age: null, address: '', city: '',country: '', status: '', updated: null};
   isLoadingResults = true;
   getCasesDetails(id: string) {
     this.api.getCasesById(id)
