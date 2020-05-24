@@ -1,8 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ChartOptions, ChartType, ChartDataSets } from 'chart.js';
-import { Label } from 'ng2-charts';
-import { ApiService } from '../api.service';
-import { Statistic } from '../statistic';
 
 @Component({
   selector: 'app-cases-stat',
@@ -10,6 +6,7 @@ import { Statistic } from '../statistic';
   styleUrls: ['./cases-stat.component.scss'],
 })
 export class CasesStatComponent implements OnInit {
+<<<<<<< HEAD
   stats: Statistic[] = [];
   label = 'Positive';
   isLoadingResults = true;
@@ -59,6 +56,10 @@ export class CasesStatComponent implements OnInit {
   }
 
   constructor(private api: ApiService) {}
+=======
+
+  constructor() { }
+>>>>>>> parent of 5221000... added imports and variable to cases-stat component
 
   ngOnInit(): void {
     this.getStatistic(this.label);

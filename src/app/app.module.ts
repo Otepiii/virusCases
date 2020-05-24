@@ -26,7 +26,6 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatSelectModule } from '@angular/material/select';
-import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -57,7 +56,10 @@ import { ChartsModule } from 'ng2-charts';
     MatSlideToggleModule,
     MatButtonToggleModule,
     MatSelectModule,
+<<<<<<< HEAD
     ChartsModule,
+=======
+>>>>>>> parent of 5221000... added imports and variable to cases-stat component
   ],
   providers: [],
   bootstrap: [AppComponent],
