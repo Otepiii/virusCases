@@ -57,7 +57,7 @@ import { ChartsModule } from 'ng2-charts';
     MatSlideToggleModule,
     MatButtonToggleModule,
     MatSelectModule,
-    ChartsModule
+    ChartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
