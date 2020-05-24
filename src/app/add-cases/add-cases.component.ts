@@ -39,7 +39,7 @@ export class AddCasesComponent implements OnInit {
         const id = res._id;
         this.isLoadingResults = false;
         this.router.navigate(['/cases-details', id]);
-      }, (err: any)=>{
+      }, (err: any) => {
         console.log(err);
         this.isLoadingResults = false;
       });
