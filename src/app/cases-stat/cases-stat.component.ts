@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ChartOptions, ChartType, ChartDataSets } from 'chart.js';
+import { Label } from 'ng2-charts';
+import { ApiService } from '../api.service';
+import { Statistic } from '../statistic';
 
 @Component({
   selector: 'app-cases-stat',
@@ -6,11 +10,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cases-stat.component.scss'],
 })
 export class CasesStatComponent implements OnInit {
-<<<<<<< HEAD
   stats: Statistic[] = [];
   label = 'Positive';
   isLoadingResults = true;
-  barChartOptions = {
+  barChartOptions: ChartOptions = {
     responsive: true,
   };
   barChartLabels: Label[] = [];
@@ -20,6 +23,13 @@ export class CasesStatComponent implements OnInit {
   barChartData: ChartDataSets[] = [
     { data: [], backgroundColor: [], label: this.label },
   ];
+
+  constructor(private api: ApiService) {}
+
+  ngOnInit(): void {
+    this.getStatistic(this.label);
+  }
+
   getStatistic(status: string) {
     this.barChartData = [{ data: [], backgroundColor: [], label: this.label }];
     this.barChartLabels = [];
@@ -32,11 +42,11 @@ export class CasesStatComponent implements OnInit {
           this.barChartLabels.push(stat._id.date);
           chartdata.push(stat.count);
           if (this.label === 'Positive') {
-            chartcolor.push('rgba(255,165,0,0.5)');
+            chartcolor.push('rgba(255, 165, 0, 0.5)');
           } else if (this.label === 'Dead') {
-            chartcolor.push('rgba(255,0,0,0.5)');
+            chartcolor.push('rgba(255, 0, 0, 0.5)');
           } else {
-            chartcolor.push('rgba(0,255,0,0.5)');
+            chartcolor.push('rgba(0, 255, 0, 0.5)');
           }
         });
         this.barChartData = [
@@ -50,18 +60,9 @@ export class CasesStatComponent implements OnInit {
       }
     );
   }
+
   changeStatus() {
     this.isLoadingResults = true;
-    this.getStatistic(this.label);
-  }
-
-  constructor(private api: ApiService) {}
-=======
-
-  constructor() { }
->>>>>>> parent of 5221000... added imports and variable to cases-stat component
-
-  ngOnInit(): void {
     this.getStatistic(this.label);
   }
 }
