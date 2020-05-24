@@ -9,8 +9,8 @@ import { AddCasesComponent } from './add-cases/add-cases.component';
 import { CasesDetailsComponent } from './cases-details/cases-details.component';
 import { CasesStatComponent } from './cases-stat/cases-stat.component';
 
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { HttpClientModule} from "@angular/common/http";
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,16 +19,16 @@ import { HttpClientModule} from "@angular/common/http";
     EditCasesComponent,
     AddCasesComponent,
     CasesDetailsComponent,
-    CasesStatComponent
+    CasesStatComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
